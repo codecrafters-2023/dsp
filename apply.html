@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Application Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Apply to be a driver with our delivery service partner program. Join our team of professional drivers and start delivering packages today.">
+    <meta name="keywords"
+        content="Driver Application, Delivery Driver, Join Our Team, Driver Jobs, Delivery Service Partner, Driver Recruitment">
+    <meta name="author" content="Delivery Service Partner">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Driver Application Form">
+    <meta property="og:description"
+        content="Apply to be a driver with our delivery service partner program. Join our team of professional drivers and start delivering packages today.">
+    <meta property="og:image" content="./assets/images/logo/logo.png">
+    <meta property="og:url" content="https://www.yourwebsite.com/apply.html">
+    <meta property="og:site_name" content="Delivery Service Partner">
+
+
+    <!-- favicon -->
+    <link rel="icon" href="./assets/images/logo/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/images/logo/favicon.png">
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- External Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">
+                <img src="./assets/images/logo/logo.png" alt="DSP Logo" class="logo-image">
+                <!-- <div class="logo-icon floating">
+                    <i class="fas fa-box"></i>
+                </div>
+                <div class="logo-text">Swift<span>Parcel</span></div> -->
+            </a>
+
+            <div class="nav-links">
+                <a href="/index.html" class="nav-link active">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <!-- <a href="#" class="nav-link">Tracking</a> -->
+                <a href="/services.html" class="nav-link">Services</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-buttons">
+                <!-- <button class="btn btn-outline">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button> -->
+                <a href="/apply.html" class="btn btn-primary">
+                    <i class="fas fa-shipping-fast"></i> Apply
+                </a>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <!-- <a href="" class="nav-link">Tracking</a> -->
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="mobile-buttons">
+            <!-- <button class="btn btn-outline">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button> -->
+            <a href="/apply.html" class="btn btn-primary">
+                <i class="fas fa-shipping-fast"></i> Apply
+            </a>
+        </div>
+    </div>
+
+    <div class="main-applyFormcontainer">
+        <div class="applyForm-container">
+            <div class="header">
+                <h1>Driver Application Form</h1>
+                <p>Join our team of professional drivers</p>
+            </div>
+
+            <div class="form-container">
+                <form id="driverForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>License Type</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="license-g" name="license-type" value="G" required>
+                                <label for="license-g">G License</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="license-g2" name="license-type" value="G2">
+                                <label for="license-g2">G2 License</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="license-other" name="license-type" value="Other">
+                                <label for="license-other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vehicle-type">Vehicle Type</label>
+                        <select id="vehicle-type" name="vehicle-type" required>
+                            <option value="">Select vehicle type</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="van">Van</option>
+                            <option value="truck">Truck</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Availability</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="weekdays" name="availability" value="weekdays">
+                                <label for="weekdays">Weekdays</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="weekends" name="availability" value="weekends">
+                                <label for="weekends">Weekends</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="mornings" name="availability" value="mornings">
+                                <label for="mornings">Mornings</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="evenings" name="availability" value="evenings">
+                                <label for="evenings">Evenings</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status in Canada</label>
+                        <select id="status" name="status" required>
+                            <option value="">Select your status</option>
+                            <option value="citizen">Citizen</option>
+                            <option value="pr">Permanent Resident</option>
+                            <option value="work-permit">Work Permit</option>
+                            <option value="student">Student Visa</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Delivery Experience (if any)</label>
+                        <textarea id="experience" name="experience" rows="3"
+                            placeholder="Describe your previous delivery experience"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Current Living Address</label>
+                        <input type="text" id="address" name="address" required placeholder="Enter your full address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job">Current Job (if any)</label>
+                        <input type="text" id="job" name="job" placeholder="Enter your current job">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Looking for</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="long-term" name="contract-type" value="long-term" required>
+                                <label for="long-term">Long Term Contract</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="short-term" name="contract-type" value="short-term">
+                                <label for="short-term">Short Term Contract</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-date">When Can You Start?</label>
+                        <input type="date" id="start-date" name="start-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+
+                    <button type="submit">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer class="footer-main-container"> -->
+    <!-- <div class="content">
+            <h1>Delivery Service Partner</h1>
+            <p>Experience the future of parcel delivery with our innovative tracking system, real-time updates, and
+                eco-friendly delivery options.</p>
+            <a href="/contact.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div> -->
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="./assets/images/logo/footer-logo.png" alt="DSP Logo" class="footer-logo-image">
+                            <!-- <div class="footer-logo-icon floating">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="footer-logo-text">SwiftParcel</div> -->
+                        </div>
+                        <!-- <p style="color: #94a3b8; line-height: 1.7; margin-top: 20px;">
+                            SwiftParcel delivers your packages with speed and care. From local shipments to
+                            international deliveries, we ensure your parcels arrive safely and on time.
+                        </p> -->
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="/services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <!-- <li><a href="#"><i class="fas fa-chevron-right"></i> Tracking</a></li> -->
+                            <li><a href="/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="/services.html"><i class="fas fa-shipping-fast"></i> Last-Mile Delivery</a></li>
+                            <li><a href="/services.html"><i class="fas fa-globe"></i> Same-Day Courier Service</a></li>
+                            <li><a href="/services.html"><i class="fas fa-warehouse"></i> E-commerce Fulfillment</a></li>
+                            <li><a href="/services.html"><i class="fas fa-boxes"></i> Contract Delivery Partnerships</a></li>
+                            <li><a href="/services.html"><i class="fas fa-recycle"></i> Seasonal & Overflow Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <div class="footer-contact">
+                            <p><i class="fas fa-map-marker-alt"></i> 71 King St W, Mississuaga, ON</p>
+                            <p><i class="fas fa-phone-alt"></i> +1 (647) 509-2858</p>
+                            <p><i class="fas fa-envelope"></i> dsp@deliveryservicepartner.ca</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 8PM, Sat: 9AM - 6PM</p>
+                        </div>
+
+                        <!-- <div class="newsletter">
+                            <h4 style="margin-top: 25px;">Newsletter</h4>
+                            <p>Subscribe to get special offers, free giveaways, and delivery updates.</p>
+                            <form class="newsletter-form">
+                                <input type="email" class="newsletter-input" placeholder="Your Email">
+                                <button type="submit" class="newsletter-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Delivery Service Partner. Designed By <a href="https://gurmaanitservices.com" target="_blank">Gurmaan IT Services</a>. 
+                    <!-- <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms & Conditions</a> |
+                    <a href="#">Sitemap</a> -->
+                </p>
+            </div>
+        </footer>
+
+    <script>
+        // Simple form validation and animation enhancement
+        document.getElementById('driverForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // You would typically send the form data to a server here
+            // For this example, we'll just show an alert
+            alert('Thank you for submitting your application! We will review it and get back to you soon.');
+
+            // Reset the form after submission
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
