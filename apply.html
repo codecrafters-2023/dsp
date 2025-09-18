@@ -59,6 +59,7 @@
                 <!-- <a href="#" class="nav-link">Tracking</a> -->
                 <a href="/services.html" class="nav-link">Services</a>
                 <a href="/contact.html" class="nav-link">Contact</a>
+                <a href="/contractForm.html" class="nav-link">Contract Form</a>
             </div>
 
             <div class="nav-buttons">
@@ -86,6 +87,7 @@
             <!-- <a href="" class="nav-link">Tracking</a> -->
             <a href="services.html" class="nav-link">Services</a>
             <a href="contact.html" class="nav-link">Contact</a>
+            <a href="/contractForm.html" class="nav-link">Contract Form</a>
         </div>
         <div class="mobile-buttons">
             <!-- <button class="btn btn-outline">
@@ -105,19 +107,21 @@
             </div>
 
             <div class="form-container">
-                <form id="driverForm">
+                <form id="applyForm">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        <div class="error-message">Please enter your full name</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="dob">Date of Birth</label>
+                        <label for="dob">Date of Birth *</label>
                         <input type="date" id="dob" name="dob" required>
+                        <div class="error-message">Please select your date of birth</div>
                     </div>
 
                     <div class="form-group">
-                        <label>License Type</label>
+                        <label>License Type *</label>
                         <div class="radio-group">
                             <div class="radio-option">
                                 <input type="radio" id="license-g" name="license-type" value="G" required>
@@ -132,10 +136,11 @@
                                 <label for="license-other">Other</label>
                             </div>
                         </div>
+                        <div class="error-message">Please select a license type</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="vehicle-type">Vehicle Type</label>
+                        <label for="vehicle-type">Vehicle Type *</label>
                         <select id="vehicle-type" name="vehicle-type" required>
                             <option value="">Select vehicle type</option>
                             <option value="sedan">Sedan</option>
@@ -144,10 +149,11 @@
                             <option value="truck">Truck</option>
                             <option value="other">Other</option>
                         </select>
+                        <div class="error-message">Please select your vehicle type</div>
                     </div>
 
                     <div class="form-group">
-                        <label>Availability</label>
+                        <label>Availability *</label>
                         <div class="checkbox-group">
                             <div class="checkbox-option">
                                 <input type="checkbox" id="weekdays" name="availability" value="weekdays">
@@ -166,10 +172,11 @@
                                 <label for="evenings">Evenings</label>
                             </div>
                         </div>
+                        <div class="error-message">Please select at least one availability option</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="status">Status in Canada</label>
+                        <label for="status">Status in Canada *</label>
                         <select id="status" name="status" required>
                             <option value="">Select your status</option>
                             <option value="citizen">Citizen</option>
@@ -178,6 +185,7 @@
                             <option value="student">Student Visa</option>
                             <option value="other">Other</option>
                         </select>
+                        <div class="error-message">Please select your status</div>
                     </div>
 
                     <div class="form-group">
@@ -187,8 +195,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="address">Current Living Address</label>
-                        <input type="text" id="address" name="address" required placeholder="Enter your full address">
+                        <label for="address">Current Living Address *</label>
+                        <input type="text" id="address" name="address" placeholder="Enter your full address" required>
+                        <div class="error-message">Please enter your address</div>
                     </div>
 
                     <div class="form-group">
@@ -197,35 +206,41 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Looking for</label>
+                        <label>Looking for *</label>
                         <div class="radio-group">
                             <div class="radio-option">
-                                <input type="radio" id="long-term" name="contract-type" value="long-term" required>
+                                <input type="radio" id="long-term" name="contractType" value="long-term" required>
                                 <label for="long-term">Long Term Contract</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" id="short-term" name="contract-type" value="short-term">
+                                <input type="radio" id="short-term" name="contractType" value="short-term">
                                 <label for="short-term">Short Term Contract</label>
                             </div>
                         </div>
+                        <div class="error-message">Please select a contract type</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="start-date">When Can You Start?</label>
-                        <input type="date" id="start-date" name="start-date" required>
+                        <label for="start-date">When Can You Start? *</label>
+                        <input type="date" id="start-date" name="startDate" required>
+                        <div class="error-message">Please select a start date</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        <div class="error-message">Please enter a valid phone number</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        <div class="error-message">Please enter a valid email address</div>
                     </div>
 
-                    <button type="submit">Submit Application</button>
+                    <button type="submit" id="submitButton">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
                 </form>
             </div>
         </div>
@@ -241,59 +256,61 @@
         </div> -->
 
     <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-grid">
-                    <div class="footer-col">
-                        <div class="footer-logo">
-                            <img src="./assets/images/logo/footer-logo.png" alt="DSP Logo" class="footer-logo-image">
-                            <!-- <div class="footer-logo-icon floating">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="./assets/images/logo/footer-logo.png" alt="DSP Logo" class="footer-logo-image">
+                        <!-- <div class="footer-logo-icon floating">
                                 <i class="fas fa-box"></i>
                             </div>
                             <div class="footer-logo-text">SwiftParcel</div> -->
-                        </div>
-                        <!-- <p style="color: #94a3b8; line-height: 1.7; margin-top: 20px;">
+                    </div>
+                    <!-- <p style="color: #94a3b8; line-height: 1.7; margin-top: 20px;">
                             SwiftParcel delivers your packages with speed and care. From local shipments to
                             international deliveries, we ensure your parcels arrive safely and on time.
                         </p> -->
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="/services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <!-- <li><a href="#"><i class="fas fa-chevron-right"></i> Tracking</a></li> -->
+                        <li><a href="/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="/contractForm.html"><i class="fas fa-chevron-right"></i> Contract Form</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html"><i class="fas fa-shipping-fast"></i> Last-Mile Delivery</a></li>
+                        <li><a href="/services.html"><i class="fas fa-globe"></i> Same-Day Courier Service</a></li>
+                        <li><a href="/services.html"><i class="fas fa-warehouse"></i> E-commerce Fulfillment</a></li>
+                        <li><a href="/services.html"><i class="fas fa-boxes"></i> Contract Delivery Partnerships</a>
+                        </li>
+                        <li><a href="/services.html"><i class="fas fa-recycle"></i> Seasonal & Overflow Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 71 King St W, Mississuaga, ON</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (647) 509-2858</p>
+                        <p><i class="fas fa-envelope"></i> dsp@deliveryservicepartner.ca</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 8PM, Sat: 9AM - 6PM</p>
                     </div>
 
-                    <div class="footer-col">
-                        <h4>Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                            <li><a href="/services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <!-- <li><a href="#"><i class="fas fa-chevron-right"></i> Tracking</a></li> -->
-                            <li><a href="/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Our Services</h4>
-                        <ul class="footer-links">
-                            <li><a href="/services.html"><i class="fas fa-shipping-fast"></i> Last-Mile Delivery</a></li>
-                            <li><a href="/services.html"><i class="fas fa-globe"></i> Same-Day Courier Service</a></li>
-                            <li><a href="/services.html"><i class="fas fa-warehouse"></i> E-commerce Fulfillment</a></li>
-                            <li><a href="/services.html"><i class="fas fa-boxes"></i> Contract Delivery Partnerships</a></li>
-                            <li><a href="/services.html"><i class="fas fa-recycle"></i> Seasonal & Overflow Support</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Contact Us</h4>
-                        <div class="footer-contact">
-                            <p><i class="fas fa-map-marker-alt"></i> 71 King St W, Mississuaga, ON</p>
-                            <p><i class="fas fa-phone-alt"></i> +1 (647) 509-2858</p>
-                            <p><i class="fas fa-envelope"></i> dsp@deliveryservicepartner.ca</p>
-                            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 8PM, Sat: 9AM - 6PM</p>
-                        </div>
-
-                        <!-- <div class="newsletter">
+                    <!-- <div class="newsletter">
                             <h4 style="margin-top: 25px;">Newsletter</h4>
                             <p>Subscribe to get special offers, free giveaways, and delivery updates.</p>
                             <form class="newsletter-form">
@@ -303,30 +320,74 @@
                                 </button>
                             </form>
                         </div> -->
-                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="copyright">
-                <p>&copy; 2025 Delivery Service Partner. Designed By <a href="https://gurmaanitservices.com" target="_blank">Gurmaan IT Services</a>. 
-                    <!-- <a href="#">Privacy Policy</a> |
+        <div class="copyright">
+            <p>&copy; 2025 Delivery Service Partner. Designed By <a href="https://gurmaanitservices.com"
+                    target="_blank">Gurmaan IT Services</a>.
+                <!-- <a href="#">Privacy Policy</a> |
                     <a href="#">Terms & Conditions</a> |
                     <a href="#">Sitemap</a> -->
-                </p>
-            </div>
-        </footer>
+            </p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
 
     <script>
-        // Simple form validation and animation enhancement
-        document.getElementById('driverForm').addEventListener('submit', function (e) {
+        document.getElementById('applyForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // You would typically send the form data to a server here
-            // For this example, we'll just show an alert
-            alert('Thank you for submitting your application! We will review it and get back to you soon.');
+            // Get form data
+            const formData = {
+                name: e.target.name.value,
+                dob: e.target.dob.value,
+                'license-type': document.querySelector('input[name="license-type"]:checked')?.value,
+                'vehicle-type': e.target['vehicle-type'].value,
+                availability: Array.from(document.querySelectorAll('input[name="availability"]:checked')).map(cb => cb.value),
+                status: e.target.status.value,
+                experience: e.target.experience.value,
+                address: e.target.address.value,
+                job: e.target.job.value,
+                contractType: document.querySelector('input[name="contractType"]:checked')?.value,
+                startDate: e.target.startDate.value,
+                phone: e.target.phone.value,
+                email: e.target.email.value
+            };
 
-            // Reset the form after submission
-            this.reset();
+            // Show loading state
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = 'Submitting... <i class="fas fa-spinner fa-spin"></i>';
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch('https://deliveryservicepartner.ca/send-driver-email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    // Show success message
+                    alert('Application submitted successfully!');
+                    e.target.reset();
+                } else {
+                    alert('Error: ' + (result.messages || result.message).join(', '));
+                }
+            } catch (error) {
+                alert('Network error. Please try again.');
+            } finally {
+                // Reset button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
         });
     </script>
 </body>

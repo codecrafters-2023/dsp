@@ -226,49 +226,88 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 
-  // FAQ Accordion functionality
-        document.querySelectorAll('.parcel-faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentNode;
-                item.classList.toggle('active');
-            });
-        });
+// FAQ Accordion functionality
+document.querySelectorAll('.parcel-faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentNode;
+        item.classList.toggle('active');
+    });
+});
 
-        // Form submission animation
-        const form = document.querySelector('.parcel-contact-form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const submitButton = document.querySelector('.parcel-form-submit');
-                submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-                submitButton.disabled = true;
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    submitButton.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
-                    submitButton.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                    
-                    // Reset form after success
-                    setTimeout(() => {
-                        form.reset();
-                        submitButton.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-                        submitButton.style.background = 'linear-gradient(135deg, var(--primary), var(--primary-dark))';
-                        submitButton.disabled = false;
-                    }, 2000);
-                }, 1500);
-            });
+// Form submission animation
+const form = document.querySelector('.parcel-contact-form');
+if (form) {
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitButton = document.querySelector('.parcel-form-submit');
+        submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+        submitButton.disabled = true;
+
+        // Simulate form submission
+        setTimeout(() => {
+            submitButton.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+            submitButton.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+
+            // Reset form after success
+            setTimeout(() => {
+                form.reset();
+                submitButton.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                submitButton.style.background = 'linear-gradient(135deg, var(--primary), var(--primary-dark))';
+                submitButton.disabled = false;
+            }, 2000);
+        }, 1500);
+    });
+}
+
+// Add fade-in animation to elements when they enter viewport
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('parcel-fade-in');
         }
+    });
+}, { threshold: 0.1 });
 
-        // Add fade-in animation to elements when they enter viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('parcel-fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
+document.querySelectorAll('.parcel-fade-in').forEach(el => {
+    observer.observe(el);
+});
 
-        document.querySelectorAll('.parcel-fade-in').forEach(el => {
-            observer.observe(el);
+
+// send an email of contact form data
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phone: e.target.phone.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+    };
+
+    console.log(formData, 'formData');
+    
+
+    try {
+        const response = await fetch('https://deliveryservicepartner.ca/send_email.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
         });
+
+        const result = await response.json();
+        if (result.status === 'success') {
+            alert('Message sent successfully!');
+            e.target.reset();
+        } else {
+            alert('Error: ' + (result.messages || result.message).join(', '));
+        }
+    } catch (error) {
+        alert('Network error. Please try again.');
+    }
+});
+
